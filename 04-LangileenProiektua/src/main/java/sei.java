@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class seigarrena {
+public class sei {
 
     /**
      * @param args the command line arguments
