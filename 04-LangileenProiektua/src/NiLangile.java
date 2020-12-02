@@ -6,7 +6,7 @@ public class NiLangile {
      */
     public static void main(String args[]) {
         
-        langilea l1 = new langilea(1,"Alex","Moreno",700);
+        langilea l1 = new langilea(1,"Beñat","Vilarchao",700);
         System.out.println(l1.toString());
         l1.soldataIgo(50);
         System.out.println(l1.toString());       
