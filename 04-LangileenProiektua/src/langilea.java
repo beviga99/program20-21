@@ -5,6 +5,11 @@ public class langilea {
     private String izena;
     private String abizena;
     private double soldata;
+    private Zatikia lanaldia;
+    
+    public langilea() {
+        lanaldia = new Zatikia(1, 1);
+    }
     
     public langilea(int id, String izena, String abizena, double soldata){
         
@@ -122,6 +127,16 @@ public class langilea {
                 }
         }
         return null;        
+    }
+    
+    public void setLanaldia(Zatikia Lanaldia) {
+        if(lanaldia.getZenbakitzailea() < lanaldia.getIzendatzailea() && lanaldia.getZenbakitzailea() > 0 && lanaldia.getIzendatzailea() > 0) {
+            this.lanaldia = lanaldia;
+        }
+    }
+    
+    public Zatikia getLanaldia() {
+        return lanaldia;
     }
 }
     
