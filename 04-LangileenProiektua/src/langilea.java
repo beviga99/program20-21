@@ -69,7 +69,7 @@ public class langilea {
         lagun[1] = new langilea(2,"maitane","gallastegi",850);
         lagun[2] = new langilea(3,"asier","moneo",725);
         lagun[3] = new langilea(4,"laura","peralta",900);
-        lagun[4] = new langilea(5,"benito","villar",200);
+        lagun[4] = new langilea(5,"Io","Lo",200);
         lagun[5] = new langilea(6,"benat","vilarchao",1200);
         lagun[6] = new langilea(7,"jon","zengotita",580);
         lagun[7] = new langilea(8,"markel","uribe",875);
