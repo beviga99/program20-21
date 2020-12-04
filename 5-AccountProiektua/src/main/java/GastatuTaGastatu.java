@@ -6,8 +6,6 @@ public class GastatuTaGastatu {
         int count = 0;
         int dirua = 150;
         
-        System.out.println(ac1.toString());
-        
         while(ac1.getBalance() > 150){
             ac1.Debit(dirua);
             count++;
