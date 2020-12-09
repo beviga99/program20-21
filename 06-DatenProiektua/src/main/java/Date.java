@@ -44,16 +44,17 @@ public class Date {
         return mes[month-1];
     }
     public String getHilabeteaLetretan(String hiz){
-        String[] mes = new String[];
+        String[][] mes = {{"Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"}, {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}, {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}};
+        int num = 0;
         switch (hiz){
  
             case "EU":
-                String[] mes = {"Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"};
+                num = 0;
             case "ES":
-                String[] mes = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+                num = 1;
             case "EN":
-                String[] mes = {"January", "February", "Martz", "April", "June", "July", "Agoust", "September", "October", "Novenber", "Decenber"};
+                num = 2;
         }
-       
+       return mes[num][month-1];
     }
 }

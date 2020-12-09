@@ -24,6 +24,6 @@ public class TestDate {
         System.out.println("********************************");
         // Test getHilabeteaLetretan
         System.out.println(d1.getHilabeteaLetretan());
-        /*System.out.println(d1.getHilabeteaLetretan("EN"));*/
+        System.out.println(d1.getHilabeteaLetretan("EN"));
     }
 }
