@@ -18,6 +18,9 @@ public class MyCircle {
         this.center = center;
         this.radius = radius;
     }
+    public MyCircle(int radius) {
+        this.radius = radius;
+    }
     public double distance(MyPoint another) {
         return center.distance(another);
     }
