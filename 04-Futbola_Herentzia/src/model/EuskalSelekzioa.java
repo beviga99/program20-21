@@ -64,7 +64,7 @@ public class EuskalSelekzioa {
      *  
      */
     public static void selekzioOsoaSortu(){
-        Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
 
         String name;
         String surname;
@@ -95,8 +95,52 @@ public class EuskalSelekzioa {
             } else {
                 i = 1;
             }
-        }
-    
+        }*/
+        Futbolista Aitor = new Futbolista(azkenId++, "Aitor", "Fernández", 29, 1, "POR");
+        selekzioa.add(Aitor);
+        Futbolista Unai = new Futbolista(azkenId++, "Unai", "Bustinza", 28, 2, "DEF");
+        selekzioa.add(Unai);
+        Futbolista Mikel = new Futbolista(azkenId++, "Mikel", "Balenziaga", 32, 3, "DEF");
+        selekzioa.add(Mikel);
+        Futbolista Asier = new Futbolista(azkenId++, "Asier", "Illarramendi", 30, 4, "MED");
+        selekzioa.add(Asier);
+        Futbolista Iñigo = new Futbolista(azkenId++, "Iñigo", "Martínez", 29, 5, "DEF");
+        selekzioa.add(Iñigo);
+        Futbolista MikelS = new Futbolista(azkenId++, "Mikel", "San José", 31, 6, "MED");
+        selekzioa.add(MikelS);
+        Futbolista Gaizka = new Futbolista(azkenId++, "Gaizka", "Larrazabal", 23, 7, "DEF");
+        selekzioa.add(Gaizka);
+        Futbolista Manu = new Futbolista(azkenId++, "Manu", "García", 34, 8, "MED");
+        selekzioa.add(Manu);
+        Futbolista Aritz = new Futbolista(azkenId++, "Aritz", "Aduriz", 39, 9, "DEL");
+        selekzioa.add(Aritz);
+        Futbolista Javier = new Futbolista(azkenId++, "Javier", "Eraso", 30, 10, "MED");
+        selekzioa.add(Javier);
+        Futbolista AsierV = new Futbolista(azkenId++, "Asier", "Villalibre", 23, 11, "DEL");
+        selekzioa.add(AsierV);
+        Futbolista Aihen = new Futbolista(azkenId++, "Aihen", "Muñoz", 23, 12, "DEF");
+        selekzioa.add(Aihen);
+        Futbolista Iago = new Futbolista(azkenId++, "Iago", "Herrerín", 32, 13, "POR");
+        selekzioa.add(Iago);
+        Futbolista AritzE = new Futbolista(azkenId++, "Aritz", "Elustondo", 26, 14, "DEF");
+        selekzioa.add(AritzE);
+        Futbolista Jesús = new Futbolista(azkenId++, "Jesús", "Areso", 21, 15, "DEF");
+        selekzioa.add(Jesús);
+        Futbolista IñigoV = new Futbolista(azkenId++, "Iñigo", "Vicente", 23, 16, "DEL");
+        selekzioa.add(IñigoV);
+        Futbolista Daniel = new Futbolista(azkenId++, "Daniel", "VIvian", 21, 17, "DEF");
+        selekzioa.add(Daniel);
+        Entrenador JavierC = new Entrenador(azkenId++, "Javier", "Clemente", 71, "AAADA2");
+        selekzioa.add(JavierC);
+        Entrenador Joseba = new Entrenador(azkenId++, "Joseba", "Nuñez", 58, "AfADA2");
+        selekzioa.add(Joseba);
+        Entrenador Markel = new Entrenador(azkenId++, "Markel", "Lautadahandi", 60, "AfdDA2");
+        selekzioa.add(Markel);
+        Masajista Iñaki = new Masajista(azkenId++, "Iñaki", "Sertxiberrieta", 50, "Masajista", 10);
+        selekzioa.add(Iñaki);
+        IntegranteSelecion Ander = new IntegranteSelecion(azkenId++, "Ander", "Etxeburu", 45);
+        selekzioa.add(Ander);
+        
     }
     
     /** ArrayListetik objektu bat ezabatzen du. Aurkitzen ez badu false itzuliko du

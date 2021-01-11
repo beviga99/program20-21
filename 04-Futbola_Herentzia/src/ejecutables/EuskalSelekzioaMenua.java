@@ -8,8 +8,14 @@ package ejecutables;
 import model.Entrenador;
 import model.Futbolista;
 import model.IntegranteSelecion;
+import model.EuskalSelekzioa;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import static javax.swing.text.html.HTML.Tag.P;
+import static model.EuskalSelekzioa.azkenId;
+import static model.EuskalSelekzioa.selekzioOsoaSortu;
+import static model.EuskalSelekzioa.selekzioa;
 import model.Masajista;
 
 /** Programa honetan Euskal Selekzioaren datuekin egingo dugu lan.
@@ -39,8 +45,37 @@ public class EuskalSelekzioaMenua {
     
     public static int azkenId = 0; 
     public static ArrayList<IntegranteSelecion> selekzioa = new ArrayList<>(); 
-       
+    
+        
     public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        String aukera;
+        EuskalSelekzioa.selekzioOsoaSortu();
+        EuskalSelekzioaMenua.selekzioa = EuskalSelekzioa.selekzioa;
+        
+        System.out.println("  EUSKAL SELEKZIOA");
+        System.out.println("----------------------------------");
+        System.out.println("1. Partaideen datuak ikusi");
+        System.out.println("2. Partaideen datuak ikusi taldekatuta");
+        System.out.println("3. Futbolariak alfabetikoki inprimatu");
+        System.out.println("4. Aldaketa");
+        System.out.println("5. Bilatu abizenetik");
+        System.out.println("z. Irten");
+        
+        System.out.println("Aukeratu zenbaki bat:");
+        aukera = in.next();
+        
+        switch(aukera) {
+            case "1":
                 
+                for (IntegranteSelecion P : selekzioa) { 
+                    System.out.println(P.toString()) ;
+                }
+                System.out.println("Futbolaria: " + Futbolista.futcop + ", Entrenatzaileak: " + Entrenador.encop + ", Masajistak: "+ Masajista.macop);
+        }
+        
+        
     }   
+
 }

@@ -14,11 +14,13 @@ public class Futbolista extends IntegranteSelecion{
 
     private int dorsal;
     private String demarcacion;
+    public static int futcop;
     
     public Futbolista(int id, String nombre, String apellidos, int edad, int dorsal, String demarcacion) {
         super(id, nombre, apellidos, edad);
         this.dorsal = dorsal;
         this.demarcacion = demarcacion;
+        futcop++;
     }
 
     public int getDorsal() {

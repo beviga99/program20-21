@@ -57,4 +57,8 @@ public class IntegranteSelecion {
     public void viajar() {
         System.out.println(this.nombre + " " + this.apellidos + " esta viajando.");
     }
+    
+    public String toString() {
+        return "Partaidea: {id: " + getId() + ", nombre: " + getNombre() + ", apellido: " + getApellidos() + ", edad: ";
+    }
 }

@@ -5,6 +5,7 @@ public class Masajista extends IntegranteSelecion{
     
     private String titulacion;
     private int aniosExperiencia;
+    public static int macop;
 
     public Masajista() {
     }
@@ -13,6 +14,7 @@ public class Masajista extends IntegranteSelecion{
         super(id, nombre, apellidos, edad);
         this.titulacion = titulacion;
         this.aniosExperiencia = aniosExperiencia;
+        macop++;
     }
 
     public void setTitulacion(String titulacion) {
