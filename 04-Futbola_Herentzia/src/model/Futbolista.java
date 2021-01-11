@@ -38,14 +38,14 @@ public class Futbolista extends IntegranteSelecion{
     }
     
     public void entrenando() {
-        System.out.println("Esta entrenando.");
+        System.out.println(super.getNombre() + " " + super.getApellidos() + " esta entrenando.");
     }
     
     public void jugarPartido() {
-        System.out.println("Esta jugando el partido.");
+        System.out.println(super.getNombre() + " " + super.getApellidos() + " esta jugando el partido.");
     }
 
     public String toString() {
-        return "Futbolista: {id: " + super.getId() + ", nombre: " + super.getNombre() + ", apellido: " + super.getApillidos() + ", edad: " + super.getEdad() + ", dorsal: " + getDorsal() + ", demarcacion: " + getDemarcacion() + "}";
+        return "Futbolista: {id: " + super.getId() + ", nombre: " + super.getNombre() + ", apellido: " + super.getApellidos() + ", edad: " + super.getEdad() + ", dorsal: " + getDorsal() + ", demarcacion: " + getDemarcacion() + "}";
     }
 }

@@ -32,7 +32,7 @@ public class Masajista extends IntegranteSelecion{
     }
     
     public void darMasage() {
-        System.out.println("Esta dando un masage.");
+        System.out.println(super.getNombre() + " " + super.getApellidos() + " esta dando un masage.");
     }
     
 }

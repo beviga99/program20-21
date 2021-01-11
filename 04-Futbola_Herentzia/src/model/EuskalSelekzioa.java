@@ -1,12 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import model.Futbolista;
 
 public class EuskalSelekzioa {
     
     public static int azkenId = 0; 
-    ArrayList<IntegranteSelecion> selekzioa = new ArrayList<IntegranteSelecion>();
+    public static ArrayList<IntegranteSelecion> selekzioa = new ArrayList<IntegranteSelecion>();
 
     public static void main(String[] args) {
         
@@ -63,7 +64,38 @@ public class EuskalSelekzioa {
      *  
      */
     public static void selekzioOsoaSortu(){
+        Scanner in = new Scanner(System.in);
+
+        String name;
+        String surname;
+        int age;
+        int i = 0;
+        String continu;
+        while(i == 0){
+            System.out.println("Enter the name: ");
+            name = in.next();
         
+            System.out.println("Enter the surname: ");
+            surname = in.next();
+        
+            System.out.println("Enter the age: ");
+            age = in.nextInt();
+        
+            IntegranteSelecion p1 = new IntegranteSelecion(azkenId++, name, surname, age);
+        
+            selekzioa.add(p1);
+            
+            System.out.println("Do you want to continue? (y/n)");
+            continu = in.next();
+            while(!continu.equals("y") && !continu.equals("n")) {
+                System.out.println("Wrong value, try again. (y/n)");
+            }
+            if(continu.equals("y")) {
+                i = 0;
+            } else {
+                i = 1;
+            }
+        }
     
     }
     
@@ -73,7 +105,12 @@ public class EuskalSelekzioa {
      * @return 
      */
     public static boolean partaideaEzabatu(int id){
+        if (id <= selekzioa.size()) {
+            selekzioa.remove(id);
+            return true;
+        } else {
+            return false;        
+        }
 
-        return false;
     }
 }

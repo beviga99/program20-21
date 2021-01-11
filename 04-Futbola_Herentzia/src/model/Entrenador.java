@@ -22,14 +22,14 @@ public class Entrenador extends IntegranteSelecion{
     }
     
     public void dirigirEntrenamiento() {
-        System.out.println("Esta dirigiendo el entrenamiento.");
+        System.out.println(super.getNombre() + " " + super.getApellidos() + " esta dirigiendo el entrenamiento.");
     }
     
     public void dirigirPartido() {
-        System.out.println("Esta dirigiendo el partido.");
+        System.out.println(super.getNombre() + " " + super.getApellidos() + " esta dirigiendo el partido.");
     }
 
     public String toString() {
-        return "Entrenador: {id: " + super.getId() + ", nombre: " + super.getNombre() + ", apellido: " + super.getApillidos() + ", edad: " + super.getEdad() + ", Numero de federacion: " + getIdFederacion() + "}";
+        return "Entrenador: {id: " + super.getId() + ", nombre: " + super.getNombre() + ", apellido: " + super.getApellidos() + ", edad: " + super.getEdad() + ", Numero de federacion: " + getIdFederacion() + "}";
     }
 }

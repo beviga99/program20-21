@@ -26,7 +26,7 @@ public class IntegranteSelecion {
         return this.nombre;
     }
     
-    public String getApillidos() {
+    public String getApellidos() {
         return this.apellidos;
     }
     
@@ -51,10 +51,10 @@ public class IntegranteSelecion {
     }
     
     public void concentrarse() {
-        System.out.println("Esta concentrado.");
+        System.out.println(this.nombre + " " + this.apellidos + " esta convocado.");
     }
     
     public void viajar() {
-        System.out.println("Esta viajando.");
+        System.out.println(this.nombre + " " + this.apellidos + " esta viajando.");
     }
 }
