@@ -69,10 +69,44 @@ public class EuskalSelekzioaMenua {
         switch(aukera) {
             case "1":
                 
-                for (IntegranteSelecion P : selekzioa) { 
-                    System.out.println(P.toString()) ;
+                for (int i = 0; i < selekzioa.size(); i++) {
+                    System.out.println(selekzioa.get(i).toString());
                 }
-                System.out.println("Futbolaria: " + Futbolista.futcop + ", Entrenatzaileak: " + Entrenador.encop + ", Masajistak: "+ Masajista.macop);
+                
+            case "2":
+                
+                System.out.println("Futbolistak: " + Futbolista.futcop);
+                
+                for (int i = 0; i < selekzioa.size(); i++) {
+                    if(selekzioa.get(i).getClass() == Futbolista.class) {
+                        System.out.println(selekzioa.get(i).toString());
+                    }
+                }
+                
+                System.out.println("Entrenadores: " + Entrenador.encop);
+                
+                for (int i = 0; i < selekzioa.size(); i++) {
+                    if(selekzioa.get(i).getClass() == Entrenador.class) {
+                        System.out.println(selekzioa.get(i).toString());
+                    }
+                }
+                
+                System.out.println("Masajistas: " + Masajista.macop);
+                
+                for (int i = 0; i < selekzioa.size(); i++) {
+                    if(selekzioa.get(i).getClass() == Masajista.class) {
+                        System.out.println(selekzioa.get(i).toString());
+                    }
+                }
+                
+                System.out.println("Beste partaidea: ");
+                
+                for (int i = 0; i < selekzioa.size(); i++) {
+                    if(selekzioa.get(i).getClass() != Futbolista.class && selekzioa.get(i).getClass() != Entrenador.class && selekzioa.get(i).getClass() != Masajista.class) {
+                        System.out.println(selekzioa.get(i).toString());
+                    }
+                }
+
         }
         
         

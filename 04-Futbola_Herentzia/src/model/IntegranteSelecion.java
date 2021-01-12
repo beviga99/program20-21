@@ -59,6 +59,6 @@ public class IntegranteSelecion {
     }
     
     public String toString() {
-        return "Partaidea: {id: " + getId() + ", nombre: " + getNombre() + ", apellido: " + getApellidos() + ", edad: ";
+        return "Partaidea: {id: " + getId() + ", nombre: " + getNombre() + ", apellido: " + getApellidos() + ", edad: " + getEdad() + "}";
     }
 }
