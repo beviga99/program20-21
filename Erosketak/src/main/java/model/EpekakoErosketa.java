@@ -15,8 +15,33 @@ public class EpekakoErosketa extends Erosketa{
     }
     
     public double gainetikOrdainduBeharrekoa() {
-        return epeak * kuota;
+        return kuota / epeak;
     }
+
+    public int getEpeak() {
+        return epeak;
+    }
+
+    public boolean isOdainketaBukatua() {
+        return odainketaBukatua;
+    }
+
+    public double getKuota() {
+        return kuota;
+    }
+
+    public void setEpeak(int epeak) {
+        this.epeak = epeak;
+    }
+
+    public void setOdainketaBukatua(boolean odainketaBukatua) {
+        this.odainketaBukatua = odainketaBukatua;
+    }
+
+    public void setKuota(double kuota) {
+        this.kuota = kuota;
+    }
+    
     
 
     
