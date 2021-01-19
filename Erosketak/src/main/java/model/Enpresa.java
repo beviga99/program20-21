@@ -2,8 +2,10 @@
 package model;
 
 
-public class Enpresa extends Bezeroa{
+public class Enpresa implements Bezeroa{
     
+    private int kodea;
+    private String helbidea;
     private String izenJuridikoa;
     private String izenKomertziala;
     private String[] kontaktoenEmailak;
@@ -14,13 +16,24 @@ public class Enpresa extends Bezeroa{
         this.kontaktoenEmailak = kontaktoenEmailak;
     }
 
-    public String getIzenJuridikoa() {
-        return izenJuridikoa;
+    public String getIzena() {
+        return izenKomertziala;
+    }
+    
+    public String getEmaila() {
+        return kontaktoenEmailak[0];
     }
 
-    public String[] getKontaktoenEmailak() {
-        return kontaktoenEmailak;
+    @Override
+    public int getKodea() {
+        return kodea;
     }
+
+    @Override
+    public String getHelbidea() {
+        return helbidea;
+    }
+    
    
     
 }

@@ -2,8 +2,10 @@
 package model;
 
 
-public class Pertsona extends Bezeroa{
+public class Pertsona implements Bezeroa{
     
+    private int kodea;
+    private String helbidea;
     private String izena;
     private String abizena;
     private String emaila;
@@ -15,7 +17,7 @@ public class Pertsona extends Bezeroa{
     }
 
     public String getIzena() {
-        return izena;
+        return izena + " " + abizena;
     }
 
     public String getAbizena() {
@@ -24,6 +26,16 @@ public class Pertsona extends Bezeroa{
 
     public String getEmaila() {
         return emaila;
+    }
+
+    @Override
+    public int getKodea() {
+        return kodea;
+    }
+
+    @Override
+    public String getHelbidea() {
+        return helbidea;
     }
     
     
