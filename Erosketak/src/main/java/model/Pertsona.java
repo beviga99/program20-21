@@ -11,6 +11,7 @@ public class Pertsona implements Bezeroa{
     private String emaila;
 
     public Pertsona(String izena, String abizena, String emaila) {
+        
         this.izena = izena;
         this.abizena = abizena;
         this.emaila = emaila;

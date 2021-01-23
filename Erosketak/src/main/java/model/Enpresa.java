@@ -11,6 +11,7 @@ public class Enpresa implements Bezeroa{
     private String[] kontaktoenEmailak;
 
     public Enpresa(String izenJuridikoa, String izenKomertziala, String[] kontaktoenEmailak) {
+
         this.izenJuridikoa = izenJuridikoa;
         this.izenKomertziala = izenKomertziala;
         this.kontaktoenEmailak = kontaktoenEmailak;
