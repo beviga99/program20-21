@@ -26,7 +26,13 @@ public class Menu {
         JFrame frame = new JFrame("Versenken Das Boot");  
         JPanel panel = new JPanel();  
         panel.setLayout(new FlowLayout());
+        
 
+        
+
+        start();
+
+        
         JButton RB = new JButton();
         RB.setPreferredSize(new Dimension(80, 30));
         RB.setText("Restart"); 
@@ -52,17 +58,13 @@ public class Menu {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         frame.setVisible(true);
         
- 
-        
-
-        start();
-
-
     }  
     
     public static void start() {
+        
         Player player1 = new Player(1);
         Player player2 = new Player(2);
+
 
         colocarBarco(player1.getTablero(), 5);
         colocarBarco(player1.getTablero(), 4);
