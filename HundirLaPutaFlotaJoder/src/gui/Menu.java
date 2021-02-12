@@ -22,23 +22,11 @@ import model.Tablero;
 import model.Player;
 
 public class Menu {  
-    public static void main(String s[]) throws InterruptedException {  
+    public static void main(String s[]) {  
         JFrame frame = new JFrame("Versenken Das Boot");  
         JPanel panel = new JPanel();  
         panel.setLayout(new FlowLayout());
-        
-        
-        JButton SB = new JButton();  
-        SB.setText("Start"); 
-        SB.setPreferredSize(new Dimension(80, 30));
-        panel.add(SB); 
-        
-        SB.addActionListener(e -> {
-            start();
-            
-        });
-        
-        
+
         JButton RB = new JButton();
         RB.setPreferredSize(new Dimension(80, 30));
         RB.setText("Restart"); 
@@ -58,24 +46,48 @@ public class Menu {
          
         });
         
+        
         frame.add(panel);  
         frame.setBounds(525,100,300,80); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-        frame.setVisible(true); 
-       
+        frame.setVisible(true);
         
+ 
+        
+
+        start();
+
+
     }  
     
     public static void start() {
         Player player1 = new Player(1);
-        player1.getTablero().anadirBarco(5);
-        player1.getTablero().anadirBarco(4);
         Player player2 = new Player(2);
+
+        colocarBarco(player1.getTablero(), 5);
+        colocarBarco(player1.getTablero(), 4);
+        colocarBarco(player1.getTablero(), 4);
+        colocarBarco(player1.getTablero(), 3);
+
+    }
+
+    public static void colocarBarco(Tablero tabla, int cant) {
         
+        tabla.anadirBarco(cant);
+        while (tabla.proceso == 1) {
+        waiter(tabla, 1);
+        }
+
     }
     
+    public static void waiter(Tablero tabla, int num) {
 
-
-    
-    
-}
+            try{
+                    Thread.sleep(num);
+                } catch (Exception e) {
+                    System.out.println("Issue");
+                    //This can be anything to let the user/programmer know something's wrong
+                }
+            }
+        
+    }

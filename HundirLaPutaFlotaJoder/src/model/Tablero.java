@@ -65,7 +65,7 @@ public class Tablero extends JPanel{
 		setBorder(new EmptyBorder(15,5,0,25));
 		
 		//AÑADIR LISTENER AL TABLERO PARA QUE AL PULSAR R SE CAMBIE LA ROTACION
-		
+		crearTablero();
 		
 		//--CREAR TABLERO
 		
@@ -131,7 +131,7 @@ public class Tablero extends JPanel{
 	}
 
 
-	public void anadirBarco(int t_barco)
+    public void anadirBarco(int t_barco)
 	{
 		proceso = 1;
 		
@@ -143,6 +143,7 @@ public class Tablero extends JPanel{
 			
 			boton[x].addKeyListener(e2);
 		}
+                
 		
 	}
         
