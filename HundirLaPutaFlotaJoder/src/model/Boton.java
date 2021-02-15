@@ -16,12 +16,14 @@ import javax.swing.JButton;
 
 public class Boton extends JButton{
 	
-	boolean activo = false;
-	boolean iluminado = false;
-	boolean tocado = false;
-	boolean agua = false;
-	boolean hundido = false;
-	int id_barco = 0;
+	public boolean activo = false;
+	public boolean iluminado = false;
+	public boolean tocado = false;
+	public boolean agua = false;
+	public boolean hundido = false;
+	public int id_barco = 0;
+        public boolean ocupado = false;
+
 	
 	public static Color color = Color.green;
 
@@ -33,6 +35,10 @@ public class Boton extends JButton{
 	}
 	
 	//----SETTERS
+
+        public void setOcupado(boolean ocupado) {
+            this.ocupado = ocupado;
+        }
 	
 
 	public void setActivo(boolean activo)
@@ -52,11 +58,15 @@ public class Boton extends JButton{
 	
 	public void setTocado(boolean bool)
 	{
-		tocado = bool;
+                
+                tocado = bool;
+
 	}
 	
 	public void setAgua(boolean bool)
 	{
+                
+               
 		agua = bool;
 	}
 	
@@ -96,6 +106,10 @@ public class Boton extends JButton{
 	{
 		return agua;
 	}
+        
+        public boolean getOcupado() {
+            return ocupado;
+        }
 	
 	//---METODOS
 	
@@ -140,5 +154,8 @@ public class Boton extends JButton{
 		this.setBackground(Color.red);	
 	}
 	
+        public Color getColor() {
+            return this.color;
+        }
 
 }

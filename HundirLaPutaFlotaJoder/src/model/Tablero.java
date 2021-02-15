@@ -33,9 +33,9 @@ import javax.swing.border.LineBorder;
 
 public class Tablero extends JPanel{
 	
-	Boton[] boton = new Boton [105];
-	JLabel[] letra = new JLabel[11];
-	JLabel[] numero = new JLabel[10];
+	public Boton[] boton = new Boton [105];
+	public JLabel[] letra = new JLabel[11];
+	public JLabel[] numero = new JLabel[10];
 	
 	JButton rotar;
 	
@@ -48,6 +48,8 @@ public class Tablero extends JPanel{
 	boolean es_posible_colocar = true; //indicar si es posible o no colocar el barco
 	int contador_barco = 1;
 	int barcos_hundidos = 0;
+        
+        private boolean ocupado = false;
 	
 	//------------------------------
 	
@@ -130,18 +132,35 @@ public class Tablero extends JPanel{
 
 	}
 
-
+        
+        public void showShip(Tablero t1, Tablero t2, int turno) {
+            if(turno == 2){
+                for(int x = 0; x<100;x++) {
+                    if(t1.boton[x].getActivo()) {
+                        t2.boton[x].setColorEleccionVerde();
+                    }
+                }
+            } else if(turno == 1) {
+               for(int x = 0; x<100;x++) {
+                    if(t2.boton[x].getActivo()) {
+                        t1.boton[x].setColorEleccionVerde();
+                    }
+                } 
+            }
+        }
+        
     public void anadirBarco(int t_barco)
 	{
 		proceso = 1;
 		
 		for(int x = 0; x<100; x++)
 		{
-			
+                    if(boton[x].getActivo() == false) {
 			e1.setN_barcos(t_barco);
 			boton[x].addMouseListener(e1);
 			
 			boton[x].addKeyListener(e2);
+                    }
 		}
                 
 		
@@ -383,38 +402,25 @@ public class Tablero extends JPanel{
 		}
 	}
 	
-	public void elegirCasilla(int casilla)
-	{
+	public void elegirCasilla() {
 		proceso = 1;
 		
-		if(casilla > -1)
-		{
-			
-			//comprobar si hay barco en esa casilla
-			if(boton[casilla].getActivo()) 
-			{
-				boton[casilla].setColorTocado();
-				boton[casilla].setTocado(true);
-			}
-			//comprobar si no hay barco en esa casilla
-			else if(!boton[casilla].getActivo()) 
-			{
-				boton[casilla].setColorAgua();
-			}
-			
-			terminarElegirCasilla();
-		}
-		else
-		{
-			for(int x = 0; x<100; x++)
-			{
-				
-				boton[x].addMouseListener(e3);
-				
-			}
-		}
+            
+                
+		for(int x = 0; x<100; x++) {
+                    
+                    boton[x].addMouseListener(e3);
+                    }
+		
+		/*}*/
+        
 	}
 	
+
+        
+
+
+        
 	public void terminarElegirCasilla()
 	{
 		int hundir []=  new int [5];
@@ -965,7 +971,11 @@ public class Tablero extends JPanel{
 				if(!(boton.getAgua() || boton.getTocado()))
 				{
 					boton.setColorSeleccion();
-				}
+                                        boton.setOcupado(false);
+				} else {
+                                    
+                                    boton.setOcupado(true);
+                                }
 		
 		}
 
@@ -979,7 +989,10 @@ public class Tablero extends JPanel{
 			if(!(boton.getAgua() || boton.getTocado()))
 			{
 				boton.setColorDefault();
-			}
+                                boton.setOcupado(false);
+			} else {
+                                boton.setOcupado(true);
+                        }
 			
 		}
 
@@ -989,19 +1002,23 @@ public class Tablero extends JPanel{
 			
 			Boton boton = (Boton) e.getSource();
 			
-			if(boton.getActivo()) //comprobar si hay barco en esa casilla
+                        
+                        
+                         if(boton.getActivo() && !(boton.getOcupado())) //comprobar si hay barco en esa casilla
 			{
 				boton.setColorTocado();
 				boton.setTocado(true);
+                                boton.setOcupado(true);
 			}
-			else if(!boton.getActivo()) //comprobar si no hay barco en esa casilla
+			else if(!boton.getActivo() && !(boton.getOcupado())) //comprobar si no hay barco en esa casilla
 			{
 				boton.setColorAgua();
 				boton.setAgua(true);
+                                boton.setOcupado(true);
 			}
 			
 			terminarElegirCasilla();
-			
+                        
 		}
 
 		@Override
