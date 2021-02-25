@@ -1,22 +1,11 @@
-package gui;
+package model;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
-import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.print.DocFlavor.URL;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Ventana extends JFrame{
@@ -28,7 +17,7 @@ public class Ventana extends JFrame{
         public static JButton RB;
         public static JButton EB;
 	
-	Ventana()
+	public Ventana()
 	{
 		setTitle("Versenken Das Boot");
 		
@@ -54,13 +43,9 @@ public class Ventana extends JFrame{
 		
                 SB = new JButton();
                 SB.setPreferredSize(new Dimension(100, 30));
-                SB.setText("Posición"); 
+                SB.setText("Barcos"); 
                 panel.add(SB);
-                
-                RB = new JButton();
-                RB.setPreferredSize(new Dimension(80, 30));
-                RB.setText("Restart"); 
-                panel.add(RB);
+               
                 
                 EB = new JButton(); 
                 EB.setPreferredSize(new Dimension(80, 30));

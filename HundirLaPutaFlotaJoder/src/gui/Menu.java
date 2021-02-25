@@ -5,6 +5,8 @@
  */
 package gui;
 
+import model.Texto;
+import model.Ventana;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;  
@@ -48,9 +50,6 @@ public class Menu {
             t_temp.showShip(t_player1, t_player2, turn);
         });
         
-        Ventana.RB.addActionListener(e -> {
-
-        });
         
         Ventana.EB.addActionListener(e -> {
             System.exit(0);

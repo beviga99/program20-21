@@ -1,12 +1,8 @@
-package gui;
-
-import java.awt.Color;
-import java.awt.Font;
+package model;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 public class Texto extends JPanel{
 	
