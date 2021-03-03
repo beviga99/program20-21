@@ -1,23 +1,24 @@
 
 package model;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class FKudeatu {
-    
-    private FileOutputStream fout;
-    private ObjectOutputStream out;
-    
-    public void tSortu(String name) {
+  
+        public static void tSortu(String name) {
 
         try {
-            fout = new FileOutputStream("C:/Users/vilarchao.benat/Desktop/" + name);
-            out = new ObjectOutputStream(fout);
+            FileOutputStream fout = new FileOutputStream("C:/Users/vilarchao.benat/Desktop/" + name);
+            ObjectOutputStream out = new ObjectOutputStream(fout);
             
             Terminoa t1 = new Terminoa("Hola", "Kaixo");
             Terminoa t2 = new Terminoa("Hombre", "Gizon");
@@ -38,14 +39,37 @@ public class FKudeatu {
     }
     
     
-    /*public Terminoa tBilatu(String hitza) {
-        
-    }*/
-    
-    public void tGehitu(Terminoa t) {
+    public static Terminoa tBilatu(String hitza) {
+        FileInputStream fin = null;
         
         try {
+            fin = new FileInputStream("C:/Users/vilarchao.benat/Desktop/hiztegia.dat");
+            ObjectInputStream inStream = new ObjectInputStream(fin);
+            Terminoa x;
+            while (true) {
+                x = (Terminoa) inStream.readObject();
+                if(x.getHitzaEs().equals(hitza)) {
+                    return x;
+                } else if (x.getHitzaEs().equals(hitza)) {
+                    return x;
+                }
+            }
+            
+        } catch (FileNotFoundException ex) {
+            System.out.println("Fitxategia ez dago bere lekuan.");
+        } catch (IOException ex) {
+            System.out.println("Ez dago objektu gehiagorik.");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("ClassNotFound Salbuespena gertatu da.");
+        }
+        return null;
+    }
+    
+    public static void tGehitu(Terminoa t) {
         
+        try {
+            FileOutputStream fout = new FileOutputStream("C:/Users/vilarchao.benat/Desktop/hiztegia.bat");
+            ObjectOutputStream out = new ObjectOutputStream(fout);
             out.writeObject(t);
         
         } catch (Exception e) {
