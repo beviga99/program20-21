@@ -3,7 +3,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Terminoa  implements Serializable {
+public class Terminoa implements Serializable {
     private String hitzaEs;
     private String hitzaEus;
     
