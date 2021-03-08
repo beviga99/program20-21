@@ -5,6 +5,9 @@
  */
 package view;
 
+import model.FKudeatu;
+import model.Terminoa;
+
 /**
  *
  * @author GiantsV3
@@ -14,6 +17,7 @@ public class JHiztegi extends javax.swing.JFrame {
     /**
      * Creates new form JHiztegi
      */
+    FKudeatu f=new FKudeatu();
     public JHiztegi() {
         initComponents();
     }
@@ -39,6 +43,11 @@ public class JHiztegi extends javax.swing.JFrame {
         jLabel3.setText("HIZTEGIA");
 
         jButton1.setText("Traducao");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Sartu Hiztegira");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +95,15 @@ public class JHiztegi extends javax.swing.JFrame {
         new JGehitu().setVisible(true);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Terminoa traduc = f.tBilatu(jTextField1.getText());
+        if(jTextField1.getText().equals(traduc.getHitzaEs())) {
+            jLabel1.setText(traduc.getHitzaEus());
+        } else {
+            jLabel1.setText(traduc.getHitzaEs());
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

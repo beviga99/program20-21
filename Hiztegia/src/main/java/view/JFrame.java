@@ -16,6 +16,7 @@ public class JFrame extends javax.swing.JFrame {
     /**
      * Creates new form JFrame
      */
+    FKudeatu f=new FKudeatu();
     public JFrame() {
         initComponents();
     }
@@ -33,6 +34,11 @@ public class JFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jButton1.setText("Sortu Hiztegia");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,12 +74,19 @@ public class JFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FKudeatu f=new FKudeatu();
-        f.tSortu();
         new JHiztegi().setVisible(true);
+        f.tSortu();
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(f.sortutaDago()) {
+             new JHiztegi().setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

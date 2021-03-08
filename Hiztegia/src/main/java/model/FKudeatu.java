@@ -1,39 +1,39 @@
 
 package model;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 
 public class FKudeatu {
   
-        public void tSortu() {
+    
+    public void tSortu() {   
+        try {
 
+            FileOutputStream fout = new FileOutputStream("benat.dat");
+            ObjectOutputStream out = new ObjectOutputStream(fout);
+            
             Terminoa t1 = new Terminoa("Hola", "Kaixo");
             Terminoa t2 = new Terminoa("Hombre", "Gizon");
             Terminoa t3 = new Terminoa("Mujer", "Andrea");
             Terminoa t4 = new Terminoa("Manzana", "Sagarra");
             Terminoa t5 = new Terminoa("Adios", "Agur");
             
-        try {
-
-            FileOutputStream fout = new FileOutputStream("benat.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fout);
-            
             out.writeObject(t1);
             out.writeObject(t2);
             out.writeObject(t3);
             out.writeObject(t4);
             out.writeObject(t5);
-
+            out.close();
         
-        } catch (IOException e) {
-            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     
@@ -70,9 +70,15 @@ public class FKudeatu {
             FileOutputStream fout = new FileOutputStream("benat.dat");
             ObjectOutputStream out = new ObjectOutputStream(fout);
             out.writeObject(t);
+            out.close();
         
-        } catch (IOException e) {
+        } catch (Exception e) {
         }
+    }
+    
+    public boolean sortutaDago() {
+        File fichero = new File("benat.dat");
+        return fichero.exists();
     }
 
 }
