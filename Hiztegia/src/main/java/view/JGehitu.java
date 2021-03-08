@@ -96,8 +96,9 @@ public class JGehitu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Terminoa t0 = new Terminoa(jTextField1.getText(), jTextField2.getText());
-        FKudeatu.tGehitu(t0);
-        new JFrame().setVisible(true);
+        FKudeatu f=new FKudeatu();
+        f.tGehitu(t0);
+        new JHiztegi().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
