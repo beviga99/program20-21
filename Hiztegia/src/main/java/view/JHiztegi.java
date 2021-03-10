@@ -117,7 +117,7 @@ public class JHiztegi extends javax.swing.JFrame {
         Terminoa traduc = f.tBilatu(jTextField1.getText());
         if(jTextField1.getText().equals(traduc.getHitzaEs())) {
             jLabel1.setText(traduc.getHitzaEus());
-        } else {
+        } else if(jTextField1.getText().equals(traduc.getHitzaEus())){
             jLabel1.setText(traduc.getHitzaEs());
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

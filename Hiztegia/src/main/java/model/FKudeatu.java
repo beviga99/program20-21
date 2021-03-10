@@ -49,7 +49,7 @@ public class FKudeatu {
                 x = (Terminoa) inStream.readObject();
                 if(x.getHitzaEs().equals(hitza)) {
                     return x;
-                } else if (x.getHitzaEs().equals(hitza)) {
+                } else if (x.getHitzaEus().equals(hitza)) {
                     return x;
                 }
             }
