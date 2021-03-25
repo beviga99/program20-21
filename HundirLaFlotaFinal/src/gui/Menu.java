@@ -31,12 +31,17 @@ public class Menu {
     
     public static int bucle = 1;
 
-    public static int bucleX = 0;
+    public static int bucleX = 1;
     
     
-    public static void main(String s[]) {  
+    public static void main(String s[]) { 
         
-                Ventana.SB.addActionListener(e -> {
+        SqlConnection n = new SqlConnection();
+        if(n.sortutaDago()== false) {
+            n.Tsortu();
+        }
+        
+        Ventana.SB.addActionListener(e -> {
             t_temp.showShip(t_player1, t_player2, turn);
         });
         
@@ -45,32 +50,18 @@ public class Menu {
             System.exit(0);
          
         });
-
-        start();
+        switch(bucleX){
+            case 1:
+                start();
+            case 2:
+                turno0();
+            case 3:
+                while (bucle == 1) {
+                    turno();
+                }
+                break;
         
-        texto.setTexto("El "+ player1.getNick() +" esta colocando los barcos.");
-        
-        colocarBarco(Player.tablero1, 5);
-        colocarBarco(Player.tablero1, 4);
-        colocarBarco(Player.tablero1, 4);
-        colocarBarco(Player.tablero1, 3);
-        colocarBarco(Player.tablero1, 3);
-        
-        texto.setTexto("El "+ player2.getNick() +" esta colocando los barcos.");
-        
-        colocarBarco(Player.tablero2, 5);
-        colocarBarco(Player.tablero2, 4);
-        colocarBarco(Player.tablero2, 4);
-        colocarBarco(Player.tablero2, 3);
-        colocarBarco(Player.tablero2, 3);
-        
-        change();
-
-        while (bucle == 1) {
-            turno();
         }
-        
-        
         
     }  
     
@@ -125,6 +116,29 @@ public class Menu {
         }
     }
     
+    public static void turno0() {
+        
+        texto.setTexto("El "+ player1.getNick() +" esta colocando los barcos.");
+        
+        colocarBarco(Player.tablero1, 5);
+        /*colocarBarco(Player.tablero1, 4);
+        colocarBarco(Player.tablero1, 4);
+        colocarBarco(Player.tablero1, 3);
+        colocarBarco(Player.tablero1, 3);
+        
+        texto.setTexto("El "+ player2.getNick() +" esta colocando los barcos.");
+        
+        colocarBarco(Player.tablero2, 5);
+        colocarBarco(Player.tablero2, 4);
+        colocarBarco(Player.tablero2, 4);
+        colocarBarco(Player.tablero2, 3);
+        colocarBarco(Player.tablero2, 3);*/
+        change();
+        bucleX++;
+  
+        
+    }
+    
    public static void turno()
 	{
 		int contador1 = 0;
@@ -168,6 +182,8 @@ public class Menu {
 
 			bucle = 0;
 			texto.setTexto("El "+ player1.getNick() +" ha ganado.");
+                        SqlConnection n = new SqlConnection();
+                        n.Tgehitu(player1, player2, player1);
 		}
 		
 		//--------------------------------------------------------------
@@ -202,6 +218,8 @@ public class Menu {
 				
 				bucle = 0;
 				texto.setTexto("El "+ player2.getNick() +" ha ganado.");
+                                SqlConnection n = new SqlConnection();
+                                n.Tgehitu(player1, player2, player2);
 				
 			}
 			

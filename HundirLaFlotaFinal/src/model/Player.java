@@ -57,7 +57,7 @@ public class Player {
         p1Frame.setVisible(true);
         
         st.addActionListener(e -> {
-            Menu.bucleX++;
+            
             setNick(textField.getText());
             p1Frame.setVisible(false);
             JFrame pxFrame = new JFrame(getNick());
@@ -78,6 +78,7 @@ public class Player {
 
             pxFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
             pxFrame.setVisible(true);
+            Menu.bucleX++;
         });
         
     }
