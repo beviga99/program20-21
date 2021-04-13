@@ -5,7 +5,7 @@
  */
 package view;
 
-import model.FKudeatu;
+
 import model.FKudeatuSqlite;
 
 /**

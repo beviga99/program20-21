@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -81,6 +82,24 @@ public class FKudeatuSqlite {
         } catch (SQLException e) {
         }
         return null;
+    }
+    
+        public ArrayList<Terminoa> TikusiTerminoa(){
+        String sql = "SELECT ID, HitzaEs, HitzaEus FROM hiztegia";
+        ArrayList<Terminoa> datuak = new ArrayList<>();
+        try (Connection conn = this.connect();
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
+            
+            // loop through the result set
+            while (rs.next()) {
+                Terminoa t = new Terminoa(rs.getString("HitzaEs"), rs.getString("HitzaEus"));
+                t.setIdentificator(rs.getInt("ID"));
+                datuak.add(t);
+            }
+        } catch (SQLException e) {
+        }
+        return datuak;
     }
     
     public int Tautoid(){

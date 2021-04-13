@@ -8,6 +8,10 @@ public class Terminoa implements Serializable {
     private String hitzaEus;
     private int identificator;
     
+    public Terminoa () {
+        
+    }
+    
     public Terminoa (String h1, String h2) {
         this.hitzaEs = h1;
         this.hitzaEus = h2;
