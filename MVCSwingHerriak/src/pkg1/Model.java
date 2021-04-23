@@ -11,27 +11,38 @@ import java.util.ArrayList;
 
 public class Model {
     
-    private Connection connect() {
+    public boolean dblo;
+    
+    private Connection connect(boolean t) {
         // SQLite connection string
-        String url = "jdbc:sqlite:C:/Users/vilarchao.benat/Desktop/Class/2.JAVA/GithubProgram/program20-21/MVCSwingHerriak/db/herria.db";
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        if (t == true) {
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection("jdbd:mariadb://192.168.65.1:3306/HerrienDBa", "dam1", "dam1");
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return conn;
+        } else {
+            String url = "jdbc:sqlite:C:/Users/vilarchao.benat/Desktop/Class/2.JAVA/GithubProgram/program20-21/MVCSwingHerriak/db/herria.db";
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection(url);
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return conn;
         }
-        return conn;
     }
-        
     
     public void gehitu(Herria i) {
               
-        String sql = "INSERT INTO herria(Herriak) VALUES ("+ i.getIzena() +", "+ i.getProbintzia() +", "+ i.getHondatza() +", "+ i.getOharra();
+        String sql = "INSERT INTO Herriak VALUES ('"+ i.getIzena() +"', '"+ i.getProbintzia() +"', "+ i.getHondatza() +", '"+ i.getOharra() + "')";
         
-        try (Connection conn = this.connect();
+        try (Connection conn = this.connect(dblo);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
-            
+                        
         } catch (SQLException e) {
         }
     }
@@ -40,7 +51,7 @@ public class Model {
         
         String sql = "SELECT Herria, Probintzia, Hondartza, Oharrak FROM Herriak";
         ArrayList<Herria> datuak = new ArrayList<>();
-        try (Connection conn = this.connect();
+        try (Connection conn = this.connect(dblo);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             
@@ -54,9 +65,9 @@ public class Model {
         return datuak;
     }
     
-    public void aldatu(String iz, String p, int h, String o) {
-        String sql = "UPDATE Herriak SET Probintzia = " + p + ", Hondartza = " + h + "Oharrak = " + o + " WHERE Herria = " +iz;
-        try (Connection conn = this.connect();
+    public void aldatu(Herria h1) {
+        String sql = "UPDATE Herriak SET Probintzia = '" + h1.getProbintzia() + "', Hondartza = " + h1.getHondatza() + ", Oharrak = '" + h1.getOharra() + "' WHERE Herria = '" + h1.getIzena() + "'";
+        try (Connection conn = this.connect(dblo);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             
@@ -64,18 +75,15 @@ public class Model {
         }
     }
     
-    public int ezabatu(String iz){
+    public void ezabatu(String iz){
         
-        String sql = "DELETE FROM Herriak WHERE Herria = ?";
+        String sql = "DELETE FROM Herriak WHERE Herria = '" + iz + "'";
         
-        try (Connection conn = this.connect();
-             PreparedStatement stmt  = conn.prepareStatement(sql)) {
-            
-            stmt.setString(1, iz);
-            return stmt.executeUpdate();
+        try (Connection conn = this.connect(dblo);
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(sql)){
             
         } catch (SQLException e) {
-            return 0;
         }
         
     }
