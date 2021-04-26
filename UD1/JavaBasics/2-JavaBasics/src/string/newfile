@@ -1,0 +1,7 @@
+      String inStreverseS = String.valueOf(inStreverse); 
+      
+      if (inStreverseS == inStr){
+          System.out.println("This is a palindromic word.");
+      } else {
+          System.out.println("This is not a palindromic word.");
+      }
