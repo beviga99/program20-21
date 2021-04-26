@@ -1,0 +1,161 @@
+package model;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author moreno.manuel
+ */
+import java.awt.Color;
+
+import javax.swing.JButton;
+
+public class Boton extends JButton{
+	
+	public boolean activo = false;
+	public boolean iluminado = false;
+	public boolean tocado = false;
+	public boolean agua = false;
+	public boolean hundido = false;
+	public int id_barco = 0;
+        public boolean ocupado = false;
+
+	
+	public static Color color = Color.green;
+
+	
+	//---------------------------------
+	public Boton(String texto)
+	{
+		this.setText(texto);
+	}
+	
+	//----SETTERS
+
+        public void setOcupado(boolean ocupado) {
+            this.ocupado = ocupado;
+        }
+	
+
+	public void setActivo(boolean activo)
+	{
+		this.activo = activo;
+	}
+	
+	public void setIluminado(boolean activo)
+	{
+		iluminado = activo;
+	}
+	
+	public void setIdBarco(int barco)
+	{
+		id_barco = barco;
+	}
+	
+	public void setTocado(boolean bool)
+	{
+                
+                tocado = bool;
+
+	}
+	
+	public void setAgua(boolean bool)
+	{
+                
+               
+		agua = bool;
+	}
+	
+	public void setHundido(boolean bool)
+	{
+		hundido = bool;
+	}
+	
+	//----GETTERS
+	
+	public boolean getActivo()
+	{
+		return activo;
+	}
+	
+	public boolean getIluminado()
+	{
+		return iluminado;
+	}
+	
+	public int getIdBarco()
+	{
+		return id_barco;
+	}
+	
+	public boolean getTocado()
+	{
+		return tocado;
+	}
+	
+	public boolean getAgua()
+	{
+		return agua;
+	}
+	
+	public boolean getHundido()
+	{
+		return agua;
+	}
+        
+        public boolean getOcupado() {
+            return ocupado;
+        }
+	
+	//---METODOS
+	
+	public void setColorEleccionVerde()
+	{
+		this.setBackground(new Color(153, 255, 153));
+	}
+	
+	public void setColorEleccionRojo()
+	{
+		this.setBackground(new Color(255, 153, 153));
+	}
+	
+	public void setColorActivo()
+	{
+		this.setBackground(color);
+	}
+	
+	public void setColorDefault()
+	{
+		this.setBackground(new JButton().getBackground());
+		this.setBorder(new JButton().getBorder());
+	}
+	
+	public void setColorSeleccion()
+	{
+		this.setBackground(new Color(255, 179, 102));
+	}
+	
+	public void setColorTocado()
+	{
+		this.setBackground(Color.YELLOW);
+	}
+	
+	public void setColorAgua()
+	{
+		this.setBackground(Color.cyan);	
+	}
+	
+	public void setColorHundido()
+	{
+		this.setBackground(Color.red);	
+	}
+	
+        public Color getColor() {
+            return this.color;
+        }
+
+}
